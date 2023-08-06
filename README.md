@@ -42,6 +42,11 @@ Alternatively download the [pre-built binaries](https://github.com/Foxboron/ssh-
 # Usage
 
 ```bash
+# Allow the user to interact with the TPM infrastructure
+$ sudo usermod -aG tss $USER
+# Refresh the newly granted group permissions *in the current shell*
+# NOTE: Restart logout and log back in for this to be fully applied
+$ newgrp tss
 # Create key
 $ ssh-tpm-keygen
 Generating a sealed public/private ecdsa key pair.
